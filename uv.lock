@@ -302,22 +302,26 @@ wheels = [
 ]
 
 [[package]]
-name = "langchain-practice"
+name = "langchain-version-1-x"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "dotenv" },
     { name = "langchain" },
+    { name = "langchain-core" },
     { name = "langchain-openai" },
     { name = "pydantic" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
-    { name = "langchain", specifier = ">=1.2.7" },
-    { name = "langchain-openai", specifier = ">=1.1.7" },
-    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "langchain", specifier = ">=0.3.0" },
+    { name = "langchain-core", specifier = ">=0.3.0" },
+    { name = "langchain-openai", specifier = ">=0.2.0" },
+    { name = "pydantic", specifier = ">=2.0.0" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
 ]
 
 [[package]]

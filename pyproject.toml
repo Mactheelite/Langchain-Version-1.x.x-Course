@@ -1,12 +1,13 @@
 [project]
-name = "langchain-practice"
+name = "langchain-version-1.x"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "dotenv>=0.9.9",
-    "langchain>=1.2.7",
-    "langchain-openai>=1.1.7",
-    "pydantic>=2.12.5",
+    "python-dotenv>=1.0.0",
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-core>=0.3.0",
+    "pydantic>=2.0.0",
 ]

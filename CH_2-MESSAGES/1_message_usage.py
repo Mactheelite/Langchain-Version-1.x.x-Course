@@ -1,3 +1,8 @@
+# MESSAGE
+# Messages are the fundamental unit of context for models in LangChain. 
+# They represent the input and output of models, carrying both the content and metadata 
+# needed to represent the state of a conversation when interacting with an LLM.
+
 from langchain.chat_models import init_chat_model
 from langchain.messages import HumanMessage, AIMessage, SystemMessage
 from dotenv import load_dotenv

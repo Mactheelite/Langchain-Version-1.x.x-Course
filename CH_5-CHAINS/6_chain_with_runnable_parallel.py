@@ -66,7 +66,7 @@ parallel_chain = RunnableParallel({"instagram_post": instagram_chain,
 final_chain = RunnableSequence(prompt_template, llm, parser, custom_dict_maker, parallel_chain)
 
 
-user_input = input("Enter a name or topic: ")
+user_input = "Star" # You can change this input to test with other topics.
 
 response = final_chain.invoke({"input" : user_input}) 
 

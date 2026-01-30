@@ -5,7 +5,7 @@ import os
 load_dotenv() # Load environment variables from .env file
 
 if os.environ.get("OPENAI_API_KEY") is None:
-    raise ValueError("OPENAI_API_KEY environment variable not set.") # Check if API key is available
+    raise ValueError("OPENAI_API_KEY environment variable not set.") # Check if API key is available (ignore this block)
 
 
 llm = ChatOpenAI(model="gpt-5-nano", temperature=0) # The best way to create an LLM instance

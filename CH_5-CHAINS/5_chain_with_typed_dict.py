@@ -1,15 +1,11 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableSequence,RunnableLambda
 from typing import TypedDict
 
 load_dotenv()
-
-if os.environ.get("OPENAI_API_KEY") is None:
-    raise ValueError("OPENAI_API_KEY environment variable not set.")
 
 class DictionaryOutput(TypedDict):
     text: str

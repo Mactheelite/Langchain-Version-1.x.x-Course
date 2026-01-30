@@ -1,15 +1,10 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-import os
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableSequence,RunnableLambda
 
 load_dotenv()
-
-if os.environ.get("OPENAI_API_KEY") is None:
-    raise ValueError("OPENAI_API_KEY environment variable not set.")
-
 
 llm = ChatOpenAI(model="gpt-5-nano", temperature=0)
 
@@ -28,7 +23,9 @@ def dictionary_maker(text:str) -> dict:
     return {"text": text}
 
 custom_dict_maker = RunnableLambda(dictionary_maker)
-word = "Computers"
+
+word = "Computers" # You can change this word to test with other words.
+
 # This line is optional. It's just to show the converted dictionary output. {'text': '...'}
 chain = RunnableSequence(prompt_template, llm, parser,custom_dict_maker)
 print(chain.invoke({"input": word}))
@@ -48,7 +45,6 @@ final_chain = RunnableSequence(
     parser
     )
 
-word = "Computers"
 
 response = final_chain.stream({"input" : word}) # Streaming response is good. it generates output in chunks just like ChatGPT.
 

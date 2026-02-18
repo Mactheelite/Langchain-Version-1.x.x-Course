@@ -12,7 +12,7 @@ class JokeResponse(BaseModel):
     joke: str
     length: int
 
-llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
+llm = ChatOpenAI(model="gpt-5-nano", temperature=0)
 llm_with_pydantic = llm.with_structured_output(JokeResponse)
 
 prompt_template = ChatPromptTemplate.from_messages([

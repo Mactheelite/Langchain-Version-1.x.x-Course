@@ -37,7 +37,7 @@ tools = [addition_calculator, multiplication_calculator]
 
 llm_with_tools = llm.bind_tools(tools=tools)
 
-message = [{"role": "user", "content": "What is the capital of France?"}]
+message = [{"role": "user", "content": "What is the sum of 5 and 10? and what is the product of 5 and 10?"}]
 
 response = llm_with_tools.invoke(message)
 
@@ -59,4 +59,4 @@ if response.tool_calls:
         else:
             print("No recognized tool was used.")
 else:
-    print(response.content)
+    print(f"General response: {response.content}") # If the model doesn't use any tool, it will return a general response.

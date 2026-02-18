@@ -16,7 +16,7 @@ llm = init_chat_model(model="gpt-4o", temperature=0)
 if os.environ.get("TAVILY_API_KEY") is None:
     raise ValueError("TAVILY_API_KEY environment variable not set.")
 
-tavily_client = TavilyClient(api_key=os.environ.get("TAVILY_API_KEY"))
+tavily_client = TavilyClient(api_key=os.environ.get("TAVILY_API_KEY")) # make sure to set TAVILY_API_KEY in your .env file
 
 # Defining a basic tool using the @tool decorator
 @tool(description="A tool to perform internet search for a given query.")
@@ -61,6 +61,7 @@ def beautify_and_display_best(search_results: dict) -> str:
 
 
 tools = [internet_search]
+
 llm_with_tools = llm.bind_tools(tools, tool_choice="internet_search")
 
 question = [{"role": "user", "content": "What is the capital of France?"}]
@@ -78,4 +79,4 @@ if response.tool_calls:
         answer = beautify_and_display_best(result)
         print(f"Answer:\n{'-'*70}\n{answer}\n{'-'*70}")
 else:
-    print("No tool was called")
+    print(response.content) # If the model doesn't use any tool, it will return a general response.

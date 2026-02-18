@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
-llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
+llm = ChatOpenAI(model="gpt-5-nano", temperature=0)
 
 prompt_template = PromptTemplate.from_template(
     "Tell me a joke about {topic}."

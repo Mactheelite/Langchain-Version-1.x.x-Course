@@ -51,8 +51,13 @@ agent = create_agent(
 
 response = agent.invoke(
     {"messages": [
-                   {"role": "user", "content": "What is the weather in Lagos, Nigeria?"}
+                   {"role": "user", "content": "What is the sum of 7 and 8?"}
                  ]
         })
 
-print(response["messages"][-1].content) # The response is a list of messages, and we print the content of the last message which is the agent's response.
+
+print(response["messages"])  # This will print all the messages in the response, HumanMessage, AIMessage, ToolMessage, etc.
+print("\n", "=" *110 , "\n")
+print(response["messages"][-1]) # This will print the last message in the response List.
+print("\n", "=" *110 , "\n")
+print(response["messages"][-1].content) # This will print the content of the last message in the response List, which is the agent's final answer to the user's question.

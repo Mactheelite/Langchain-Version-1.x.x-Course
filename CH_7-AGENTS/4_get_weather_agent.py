@@ -39,4 +39,4 @@ response = agent.invoke(
 
 print(response)
 print("\n", "=" *110 , "\n")
-print(response["messages"][-1].content) # This will print the actual and real-time weather information for Owerri.
+print(response["messages"][-1].content) # This will print the actual and real-time weather information for Lagos Nigeria.

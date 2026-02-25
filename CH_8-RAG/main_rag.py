@@ -6,10 +6,8 @@ from rag_chain import build_rag_chain
 
 app = FastAPI(title="RAG Cloud Upload API")
 
-
 class DeleteRequest(BaseModel):
     filename: str
-
 
 class QuestionRequest(BaseModel):
     question: str
@@ -18,7 +16,7 @@ class QuestionRequest(BaseModel):
 @app.post("/upload_pdf")
 async def upload_pdf(file: UploadFile = File(...)):
     """
-    Endpoint for uploading a PDF
+      Endpoint for uploading a PDF
     """
     try:
         contents = await file.read()

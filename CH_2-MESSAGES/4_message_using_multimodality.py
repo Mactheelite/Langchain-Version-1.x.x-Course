@@ -29,10 +29,7 @@ message_2 = [
     { 
     "role": "user",
     "content" : [
-        {
-            "type": "text",
-            "text": "Describe the content of this image."
-        },
+        {"type": "text", "text": "Describe the content of this image."},
         {
             "type": "image_url",
             "image_url": {"url": "data:image/jpeg;base64,AAAAIGZ0eXBtcDQyAAAAAGlzb21tcDQyAAACAGlzb2..."}

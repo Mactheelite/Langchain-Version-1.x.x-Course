@@ -23,7 +23,6 @@ def get_weather(city: str) -> str:
     else:
         return f"Could not retrieve weather information for {city}."
     
-
 agent = create_agent(
     model="gpt-4.1-mini",
     tools=[get_weather],
@@ -31,12 +30,12 @@ agent = create_agent(
 )
 
 
-response = agent.invoke(
+ai_response = agent.invoke(
     {"messages": [
                    {"role": "user", "content": "What is the weather in Lagos, Nigeria?"}
                  ]
         })
 
-print(response)
+print(ai_response)
 print("\n", "=" *110 , "\n")
-print(response["messages"][-1].content) # This will print the actual and real-time weather information for Lagos Nigeria.
+print(ai_response["messages"][-1].content) # This will print the actual and real-time weather information for Lagos Nigeria.
